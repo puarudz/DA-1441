@@ -91,7 +91,7 @@ echo "";
 echo "";
 echo "";
 echo "";
-wget https://raw.githubusercontent.com/thanaphat/DA-Install/master/da1443-en.sh
+wget https://raw.githubusercontent.com/puarudz/DA-1441/master/da1443-en.sh
 ############################################################
 ############################################################
 chmod 0755 da1443-en.sh
