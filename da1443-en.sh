@@ -26,7 +26,7 @@ ln -s /usr/lib/libcrypto.so /usr/lib/libcrypto.so.6
 echo "           รอสักครู่นะจ๊ะ  กำลังโหลดไฟล์โปรแกรมจร้า";
 echo "";
 mkdir -p /usr/local/directadmin
-wget -q -O da1443-en.tar.gz https://github.com/thanaphat/DA-Install/raw/master/da1443-en.tar.gz
+wget -q -O da1443-en.tar.gz https://raw.githubusercontent.com/puarudz/DA-1441/master/da1443-en.tar.gz
 ###############################################################
 ###############################################################
 tar xvf da1443-en.tar.gz -C /usr/local/directadmin
@@ -43,7 +43,7 @@ DB_USER=da_admin
 ADMIN_PASS=`perl -le'print map+(A..Z,a..z,0..9)[rand 62],0..7'`;
 DB_ROOT_PASS=`perl -le'print map+(A..Z,a..z,0..9)[rand 62],0..7'`;
 
-FTP_HOST=files.directadmin.com
+FTP_HOST=frees-da.vsicloud.com
 if [ "$OS" = "FreeBSD" ]; then
 	WGET_PATH=/usr/local/bin/wget
 else
@@ -159,7 +159,7 @@ SCRIPTS_PATH=$DA_PATH/scripts
 PACKAGES=$SCRIPTS_PATH/packages
 SETUP=$SCRIPTS_PATH/setup.txt
 
-SERVER=http://files.directadmin.com/services
+SERVER=http://frees-da.vsicloud.com/services
 
 if [ $OS = "FreeBSD" ]; then
 	OS_VER=`uname -r | cut -d- -f1`
@@ -1081,8 +1081,8 @@ if [ "$CURLDEV" -eq 0 ]; then
 			echo "*************************";
 			echo "* Cannot find /usr/include/curl/curl.h.  Php compile may fail. (yum -y install libcurl-devel)";
 			echo "* If yum doesn't work, install rpms from your respective OS path (use only 1):";
-			echo "*   http://files.directadmin.com/services/es_6.0/libcurl-devel-7.19.7-16.el6.i686.rpm";
-			echo "*   http://files.directadmin.com/services/es_6.0_64/libcurl-7.19.7-16.el6.x86_64.rpm";
+			echo "*   http://frees-da.vsicloud.com/services/es_6.0/libcurl-devel-7.19.7-16.el6.i686.rpm";
+			echo "*   http://frees-da.vsicloud.com/services/es_6.0_64/libcurl-7.19.7-16.el6.x86_64.rpm";
 			echo "*";
 			echo "* If you can install libcurl-devel quick enough in a 2nd ssh window, the php compile may work.";
 			echo "*************************";
@@ -1329,7 +1329,7 @@ if [ "$OS" = "debian" ]; then
 		echo "";
 		echo "*******************";
 
-		$BIN_DIR/wget -O $BIN_DIR/wget2 http://files.directadmin.com/services/debian_${OS_VER}/wget
+		$BIN_DIR/wget -O $BIN_DIR/wget2 http://frees-da.vsicloud.com/services/debian_${OS_VER}/wget
 		RET=$?
 		if [ $RET -eq 0 ]; then
 			mv $BIN_DIR/wget $BIN_DIR/wget.orig
@@ -1343,7 +1343,7 @@ if [ "$OS" = "debian" ]; then
 			echo "wget does not appear to be functioning with https.";
 			echo "run the following to get a new wget binary:";
 			echo "  cd /usr/bin";
-			echo "  wget -O wget2 http://files.directadmin.com/services/debian_${OS_VER}/wget";
+			echo "  wget -O wget2 http://frees-da.vsicloud.com/services/debian_${OS_VER}/wget";
 			echo "  mv wget wget.orig";
 			echo "  mv wget2 wget";
 			echo "  chmod 755 wget";
